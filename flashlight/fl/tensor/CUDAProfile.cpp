@@ -8,7 +8,11 @@
 #include "flashlight/fl/tensor/Profile.h"
 
 #include <cuda_profiler_api.h>
+#if __has_include(<nvtx3/nvToolsExt.h>)
+#include <nvtx3/nvToolsExt.h>
+#else
 #include <nvToolsExt.h>
+#endif
 
 #include "flashlight/fl/runtime/CUDAUtils.h"
 
